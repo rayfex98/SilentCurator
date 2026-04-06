@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detalle de Producto | SILENT CURATOR</title>
+  <meta name="description" content="Silla Obsidian — Diseñada por el colectivo Silent Curator, la Obsidian redefine la silueta clásica con una aproximación brutalista y monocromática." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="sc-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand sc-brand" href="index.html">Silent Curator</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav gap-1 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="catalogo.html">Catálogo</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="nosotros.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="container pt-4 pb-2">
+    <nav aria-label="breadcrumb">
+      <p class="sc-breadcrumb mb-0">
+        <a href="index.html">Inicio</a>
+        <span class="separator">/</span>
+        <a href="catalogo.html">Mobiliario</a>
+        <span class="separator">/</span>
+        <span>Silla Obsidian</span>
+      </p>
+    </nav>
+  </div>
+
+  <!-- DETALLE PRODUCTO -->
+  <section class="sc-section" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+
+        <!-- GALERÍA IMÁGENES -->
+        <div class="col-lg-7">
+          <div class="mb-3">
+            <img
+              src="img/product-obsidian.png"
+              alt="Silla Obsidian — Vista principal"
+              class="sc-detail-img-main"
+              id="main-product-img"
+            />
+          </div>
+          <div class="d-flex gap-2 flex-wrap">
+            <img src="img/product-obsidian.png" alt="Vista 1" class="sc-detail-img-thumb active"
+              onclick="setMainImg(this)" />
+            <img src="img/hero-chair.png" alt="Vista 2" class="sc-detail-img-thumb"
+              onclick="setMainImg(this)" />
+            <img src="img/product-table.png" alt="Vista 3" class="sc-detail-img-thumb"
+              onclick="setMainImg(this)" />
+            <img src="img/product-sofa.png" alt="Vista 4" class="sc-detail-img-thumb"
+              onclick="setMainImg(this)" />
+          </div>
+        </div>
+
+        <!-- INFORMACIÓN PRODUCTO -->
+        <div class="col-lg-5" style="position:sticky; top:6rem;">
+          <span class="text-label d-block mb-3">Mobiliario · Colección Brutalista</span>
+          <h1 class="text-headline mb-1">Silla Obsidian</h1>
+          <p class="mb-3" style="color:var(--on-surface-variant); font-size:0.88rem;">by Silent Curator Colectivo</p>
+
+          <p class="display-6 fw-bold mb-4" style="color:var(--primary); letter-spacing:-0.02em;">$1.450.000</p>
+
+          <p style="color:var(--on-surface-variant); line-height:1.8; font-size:0.95rem; margin-bottom:2rem;">
+            Diseñada por el colectivo Silent Curator, la Obsidian redefine la silueta clásica con una aproximación brutalista y monocromática. Una pieza que no solo sirve como asiento, sino como una declaración escultórica en cualquier espacio.
+          </p>
+
+          <!-- OPCIONES -->
+          <div class="mb-4">
+            <label class="sc-form-label d-block mb-2">Material</label>
+            <div class="d-flex gap-2 flex-wrap" id="material-options">
+              <button class="sc-filter-btn active" id="mat-obsidian">Obsidian Negro</button>
+              <button class="sc-filter-btn" id="mat-ash">Ceniza Natural</button>
+              <button class="sc-filter-btn" id="mat-slate">Pizarra</button>
+            </div>
+          </div>
+
+          <!-- CTAs -->
+          <div class="d-flex gap-3 mb-4">
+            <button class="btn btn-sc-primary flex-grow-1" id="btn-add-cart">Añadir al Carrito</button>
+            <button class="btn btn-sc-secondary" id="btn-wishlist" title="Guardar en lista de deseos" style="padding:0.75rem 1.1rem;">♡</button>
+          </div>
+
+          <!-- GARANTÍA -->
+          <div class="sc-badge-guarantee mb-4">
+            <span style="font-size:1.4rem;">🛡️</span>
+            <div>
+              <strong>Garantía de 10 Años de Integridad</strong><br/>
+              <span style="font-size:0.78rem; color:var(--outline);">Cubrimos defectos de fabricación en materiales y mano de obra.</span>
+            </div>
+          </div>
+
+          <!-- ESPECIFICACIONES -->
+          <div>
+            <p class="text-label mb-3">Especificaciones</p>
+            <div class="sc-spec-row">
+              <span class="sc-spec-label">Materiales</span>
+              <span class="sc-spec-value">Polímero de alta densidad</span>
+            </div>
+            <div class="sc-spec-row">
+              <span class="sc-spec-label">Acabado</span>
+              <span class="sc-spec-value">Matte obsidian</span>
+            </div>
+            <div class="sc-spec-row">
+              <span class="sc-spec-label">Dimensiones</span>
+              <span class="sc-spec-value">82 × 55 × 60 cm</span>
+            </div>
+            <div class="sc-spec-row">
+              <span class="sc-spec-label">Peso</span>
+              <span class="sc-spec-value">7.2 kg</span>
+            </div>
+            <div class="sc-spec-row">
+              <span class="sc-spec-label">Fabricación</span>
+              <span class="sc-spec-value">Inyección monolítica</span>
+            </div>
+            <div class="sc-spec-row">
+              <span class="sc-spec-label">Origen</span>
+              <span class="sc-spec-value">Suecia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESCRIPCIÓN EXTENDIDA -->
+  <section class="sc-section sc-section-alt">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <span class="text-label d-block mb-3">Filosofía de Diseño</span>
+          <h2 class="text-headline mb-4">Menos, pero mejor ejecutado.</h2>
+          <p style="color:var(--on-surface-variant); line-height:1.9; font-size:0.95rem;" class="mb-4">
+            Cada curva de la Obsidian ha sido calculada para ofrecer un soporte ergonómico sin sacrificar la pureza visual. El acabado mate profundo absorbe la luz, permitiendo que la forma sea la verdadera protagonista.
+          </p>
+          <p style="color:var(--on-surface-variant); line-height:1.9; font-size:0.95rem;">
+            Utilizamos un proceso de inyección de una sola pieza que elimina las líneas de unión visibles, resultando en un objeto monolítico de durabilidad excepcional.
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <img src="img/about-studio.png" alt="Proceso de diseño" class="sc-about-img" style="height:380px; object-fit:cover;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS RELACIONADOS -->
+  <section class="sc-section">
+    <div class="container">
+      <div class="row align-items-end mb-5">
+        <div class="col">
+          <span class="text-label">También te puede interesar</span>
+          <h2 class="text-headline mt-2 mb-0">Productos Relacionados</h2>
+        </div>
+        <div class="col-auto">
+          <a href="catalogo.html" class="btn btn-sc-ghost">Ver catálogo completo →</a>
+        </div>
+      </div>
+      <div class="row g-5">
+        <div class="col-sm-6 col-lg-3">
+          <a href="catalogo.html" class="text-decoration-none d-block sc-product-card">
+            <div class="sc-product-img-wrap">
+              <img src="img/product-table.png" alt='Mesa Auxiliar "Vertex"' class="sc-product-img" />
+            </div>
+            <div class="sc-product-body">
+              <p class="sc-product-category">Mobiliario</p>
+              <h3 class="sc-product-title">Mesa Auxiliar "Vertex"</h3>
+              <p class="sc-product-subtitle">Acero y Vidrio Templado</p>
+              <span class="sc-product-price">$420.000</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <a href="catalogo.html" class="text-decoration-none d-block sc-product-card">
+            <div class="sc-product-img-wrap">
+              <img src="img/product-lamp.png" alt='Lámpara de Pie "Lunar"' class="sc-product-img" />
+            </div>
+            <div class="sc-product-body">
+              <p class="sc-product-category">Iluminación</p>
+              <h3 class="sc-product-title">Lámpara de Pie "Lunar"</h3>
+              <p class="sc-product-subtitle">Aluminio Anodizado</p>
+              <span class="sc-product-price">$280.000</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <a href="catalogo.html" class="text-decoration-none d-block sc-product-card">
+            <div class="sc-product-img-wrap">
+              <img src="img/product-sofa.png" alt='Poltrona "Silent"' class="sc-product-img" />
+            </div>
+            <div class="sc-product-body">
+              <p class="sc-product-category">Mobiliario</p>
+              <h3 class="sc-product-title">Poltrona "Silent"</h3>
+              <p class="sc-product-subtitle">Lana Merino — Gris Niebla</p>
+              <span class="sc-product-price">$2.100.000</span>
+            </div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <a href="catalogo.html" class="text-decoration-none d-block sc-product-card">
+            <div class="sc-product-img-wrap">
+              <img src="img/product-vase.png" alt='Jarrón "Erosión"' class="sc-product-img" />
+            </div>
+            <div class="sc-product-body">
+              <p class="sc-product-category">Accesorios</p>
+              <h3 class="sc-product-title">Jarrón "Erosión"</h3>
+              <p class="sc-product-subtitle">Cerámica Ahumada</p>
+              <span class="sc-product-price">$125.000</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="sc-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 mb-4">
+          <p class="sc-footer-brand mb-3">Silent Curator</p>
+          <p style="font-size:0.82rem; color:var(--on-surface-variant); max-width:260px; line-height:1.7;">
+            Curaduría obsesiva de objetos que definen el espacio contemporáneo desde Buenos Aires.
+          </p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="text-label mb-3">Navegar</p>
+          <a href="index.html" class="sc-footer-link">Inicio</a>
+          <a href="catalogo.html" class="sc-footer-link">Catálogo</a>
+          <a href="nosotros.html" class="sc-footer-link">Nosotros</a>
+          <a href="nosotros.html#contacto" class="sc-footer-link">Contacto</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="text-label mb-3">Legal</p>
+          <a href="#" class="sc-footer-link">Privacidad</a>
+          <a href="#" class="sc-footer-link">Términos</a>
+        </div>
+        <div class="col-6 col-lg-2">
+          <p class="text-label mb-3">Redes</p>
+          <a href="#" class="sc-footer-link">Instagram</a>
+          <a href="#" class="sc-footer-link">LinkedIn</a>
+        </div>
+      </div>
+      <div class="sc-footer-divider"></div>
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <p class="sc-footer-copy mb-0">© 2026 Silent Curator. Todos los derechos reservados.</p>
+        <p class="sc-footer-copy mb-0">Buenos Aires · Argentina</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Cambiar imagen principal
+    function setMainImg(thumb) {
+      document.querySelectorAll('.sc-detail-img-thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+      document.getElementById('main-product-img').src = thumb.src;
+    }
+
+    // Selección de material
+    document.querySelectorAll('#material-options .sc-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#material-options .sc-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // Carrito
+    document.getElementById('btn-add-cart').addEventListener('click', function () {
+      this.textContent = '✓ Añadido al Carrito';
+      this.style.background = 'linear-gradient(135deg, #3d6b46, #2e5235)';
+      setTimeout(() => {
+        this.textContent = 'Añadir al Carrito';
+        this.style.background = '';
+      }, 2500);
+    });
+
+    // Wishlist
+    let wished = false;
+    document.getElementById('btn-wishlist').addEventListener('click', function () {
+      wished = !wished;
+      this.textContent = wished ? '♥' : '♡';
+      this.style.color = wished ? '#9f403d' : '';
+    });
+  </script>
+</body>
+</html>

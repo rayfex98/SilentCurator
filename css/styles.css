@@ -1,0 +1,559 @@
+/* ============================================================
+   SILENT CURATOR — Design System Custom CSS
+   Based on Stitch design tokens
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* --- CSS Variables / Tokens --- */
+:root {
+  --bg:          #fcf8f9;
+  --surface:     #fcf8f9;
+  --surface-low: #f6f3f4;
+  --surface-mid: #f0edef;
+  --surface-high: #eae7ea;
+  --surface-highest: #e4e2e5;
+  --surface-dim:  #dbd9dd;
+  --white:        #ffffff;
+
+  --primary:      #545f73;
+  --primary-dim:  #485367;
+  --secondary:    #526075;
+
+  --on-surface:         #323235;
+  --on-surface-variant: #5f5f61;
+  --outline:            #7b7a7d;
+  --outline-variant:    #b3b1b4;
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --shadow-ambient: 0 10px 40px -10px rgba(50, 50, 53, 0.08);
+  --shadow-hover:   0 20px 60px -10px rgba(50, 50, 53, 0.14);
+}
+
+/* --- Base Reset & Typography --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg);
+  color: var(--on-surface);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  color: var(--on-surface);
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+p { color: var(--on-surface-variant); }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+a:hover { color: var(--primary-dim); }
+
+/* --- Utility Classes --- */
+.text-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.text-display {
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--on-surface);
+}
+
+.text-headline {
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.sc-navbar {
+  background: rgba(252, 248, 249, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(179, 177, 180, 0.18);
+  padding: 1.2rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all .3s ease;
+}
+
+.sc-brand {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--on-surface) !important;
+}
+
+.sc-navbar .nav-link {
+  color: var(--on-surface-variant) !important;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.35rem 1rem !important;
+  transition: color .2s ease;
+}
+.sc-navbar .nav-link:hover,
+.sc-navbar .nav-link.active {
+  color: var(--on-surface) !important;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-sc-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dim) 100%);
+  color: #fff !important;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.85rem 2.2rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  transition: all .25s ease;
+  box-shadow: 0 4px 20px rgba(84, 95, 115, 0.25);
+}
+.btn-sc-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(84, 95, 115, 0.35);
+  color: #fff !important;
+}
+
+.btn-sc-ghost {
+  background: none;
+  color: var(--primary);
+  border: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  transition: border-color .2s ease, color .2s ease;
+}
+.btn-sc-ghost:hover {
+  border-bottom-color: var(--primary);
+  color: var(--primary-dim);
+}
+
+.btn-sc-secondary {
+  background: var(--surface-high);
+  color: var(--on-surface);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  transition: all .2s ease;
+}
+.btn-sc-secondary:hover {
+  background: var(--surface-highest);
+  color: var(--on-surface);
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.sc-hero {
+  min-height: 92vh;
+  background-color: var(--surface-low);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.sc-hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+}
+
+.sc-hero-badge {
+  display: inline-block;
+  background: var(--surface-highest);
+  color: var(--primary);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sc-hero-img-frame {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--surface-mid);
+  box-shadow: var(--shadow-ambient);
+}
+.sc-hero-img-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.sc-hero-img-frame:hover img { transform: scale(1.03); }
+
+/* ============================================================
+   CATEGORY CARDS
+   ============================================================ */
+.sc-category-card {
+  background: var(--white);
+  border-radius: 0.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-ambient);
+  transition: all .3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+.sc-category-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+.sc-category-icon {
+  width: 3rem;
+  height: 3rem;
+  background: var(--surface-low);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+.sc-product-card {
+  background: var(--white);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-ambient);
+  transition: all .3s ease;
+}
+.sc-product-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+}
+.sc-product-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  background: var(--surface-low);
+  display: block;
+  transition: transform 0.5s ease;
+}
+.sc-product-card:hover .sc-product-img { transform: scale(1.04); }
+
+.sc-product-img-wrap {
+  overflow: hidden;
+  background: var(--surface-low);
+}
+
+.sc-product-body {
+  padding: 1.5rem 1.6rem 1.8rem;
+}
+.sc-product-category {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--outline);
+  margin-bottom: 0.4rem;
+}
+.sc-product-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--on-surface);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.2rem;
+}
+.sc-product-subtitle {
+  font-size: 0.8rem;
+  color: var(--on-surface-variant);
+  margin-bottom: 1rem;
+}
+.sc-product-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   SECTION DIVIDERS & LAYOUT
+   ============================================================ */
+.sc-section {
+  padding: 6rem 0;
+}
+.sc-section-alt {
+  background-color: var(--surface-low);
+}
+.sc-section-dark {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dim) 100%);
+  color: #fff;
+}
+.sc-section-dark h1,
+.sc-section-dark h2,
+.sc-section-dark h3,
+.sc-section-dark p { color: rgba(255,255,255,0.9); }
+
+/* ============================================================
+   NEWSLETTER / CTA BAND
+   ============================================================ */
+.sc-newsletter-input {
+  border: none;
+  border-bottom: 2px solid var(--outline-variant);
+  background: transparent;
+  border-radius: 0;
+  padding: 0.7rem 0;
+  font-size: 0.9rem;
+  color: var(--on-surface);
+  transition: border-color .2s ease;
+  outline: none;
+  width: 100%;
+}
+.sc-newsletter-input:focus {
+  border-bottom-color: var(--primary);
+  background: transparent;
+  box-shadow: none;
+}
+.sc-newsletter-input::placeholder { color: var(--outline-variant); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.sc-footer {
+  background-color: var(--surface-low);
+  padding: 3.5rem 0 2rem;
+}
+.sc-footer-brand {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--on-surface);
+}
+.sc-footer-link {
+  color: var(--on-surface-variant);
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color .2s;
+}
+.sc-footer-link:hover { color: var(--primary); }
+.sc-footer-divider {
+  border-top: 1px solid rgba(179,177,180,0.25);
+  margin: 2rem 0 1.5rem;
+}
+.sc-footer-copy {
+  font-size: 0.75rem;
+  color: var(--outline);
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.sc-about-img {
+  width: 100%;
+  border-radius: 0.5rem;
+  object-fit: cover;
+  box-shadow: var(--shadow-ambient);
+}
+.sc-pillar {
+  border-left: 2px solid var(--surface-highest);
+  padding-left: 1.5rem;
+}
+.sc-pillar h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--on-surface);
+  margin-bottom: 0.5rem;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+.sc-contact-info-card {
+  background: var(--white);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-ambient);
+  height: 100%;
+}
+.sc-contact-info-icon {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+.sc-form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--outline-variant);
+  border-radius: 0;
+  padding: 0.75rem 0;
+  color: var(--on-surface);
+  font-size: 0.9rem;
+  transition: border-color .2s, background .2s;
+}
+.sc-form-control:focus {
+  border-bottom-color: var(--primary);
+  background: var(--white);
+  box-shadow: none;
+  outline: none;
+}
+.sc-form-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--outline);
+  margin-bottom: 0.35rem;
+}
+
+/* ============================================================
+   PRODUCT DETAIL PAGE
+   ============================================================ */
+.sc-detail-img-main {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  background: var(--surface-low);
+}
+.sc-detail-img-thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color .2s;
+  background: var(--surface-mid);
+}
+.sc-detail-img-thumb.active,
+.sc-detail-img-thumb:hover { border-color: var(--primary); }
+
+.sc-spec-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(179,177,180,0.2);
+}
+.sc-spec-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--outline);
+  font-weight: 600;
+}
+.sc-spec-value {
+  font-size: 0.88rem;
+  color: var(--on-surface);
+  font-weight: 500;
+}
+
+.sc-badge-guarantee {
+  background: var(--surface-low);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--on-surface-variant);
+  font-weight: 500;
+}
+
+/* ============================================================
+   FILTER BUTTONS (Catalog)
+   ============================================================ */
+.sc-filter-btn {
+  background: var(--white);
+  color: var(--on-surface-variant);
+  border: none;
+  border-radius: 2rem;
+  padding: 0.45rem 1.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all .2s;
+  box-shadow: var(--shadow-ambient);
+}
+.sc-filter-btn:hover,
+.sc-filter-btn.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(84,95,115,.3);
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+.sc-breadcrumb {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--outline);
+}
+.sc-breadcrumb a { color: var(--on-surface-variant); }
+.sc-breadcrumb .separator { margin: 0 0.5rem; color: var(--outline-variant); }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-up { animation: fadeUp 0.65s ease both; }
+.fade-up-1 { animation-delay: 0.1s; }
+.fade-up-2 { animation-delay: 0.2s; }
+.fade-up-3 { animation-delay: 0.35s; }
+.fade-up-4 { animation-delay: 0.5s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 991px) {
+  .sc-section { padding: 4rem 0; }
+  .sc-detail-img-main { height: 360px; }
+}
+@media (max-width: 767px) {
+  .text-display { font-size: 2.4rem; }
+  .sc-hero { min-height: 70vh; }
+  .sc-product-img { height: 220px; }
+}
